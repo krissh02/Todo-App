@@ -2,6 +2,7 @@ $(document).ready(() => {
 
 
     const loadTodos = () => {
+
         $.get('/todos', (todos) => {
 
             todos.forEach(todo => {
@@ -23,11 +24,10 @@ $(document).ready(() => {
         const task = $('#taskInput').val();
         $.post('/todos', { task }, () => {
             $('#taskInput').val('');
-            loadTodos();
         });
     });
     
-    $('#todoList').on('click', '.edit', () => {
+    $('#todoList').on('click', '.edit', function () {
         const id = $(this).parent().data('id'); 
         const task = prompt('Edit your task:'); 
     

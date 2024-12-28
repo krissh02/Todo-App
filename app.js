@@ -1,10 +1,6 @@
 const express = require("express");
 const bodyParser = require('body-parser');
 const todos = require("./routes/todos.js");
-const dotenv = require('dotenv');
-
-// dot env config
-dotenv.config()
 
 const app = express();
 const PORT = 5000;
