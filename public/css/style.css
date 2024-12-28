@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    background-color: aqua;
+}
+
+.container{
+    border: 2px solid black;
+    height: 25rem;
+    width: 30%;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+h1 {
+    text-align: left;
+}
+
+form {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+#taskInput{
+    padding: 6px 10% 6px 7px;
+}
+
+#taskInput::placeholder {
+    text-align: left;
+    font-size: medium;
+}
+
+input,button{
+    margin: 0 5px;
+}
+
+button{
+    padding: 4px 10px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: medium;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+}
+
+li {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    background-color: rgb(225, 222, 222);
+}
