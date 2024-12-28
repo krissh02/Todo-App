@@ -1,10 +1,26 @@
-$(document).ready(() => {
+$(document).ready(async () => {
 
 
     const loadTodos = () => {
 
         $.get('/todos', (todos) => {
+            $('#todoList').empty();
+            todos.forEach(todo => {
+                $('#todoList').append(`
+                    <li data-id = "${todo.id}">
+                        <span>${todo.task}</span>
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </li>
+                `);
+            });
+        });
 
+    };
+
+    const loadTodo = () => {
+
+        $.get('/todos', (todos) => {
             todos.forEach(todo => {
                 $('#todoList').append(`
                     <li data-id = "${todo.id}">
@@ -47,8 +63,6 @@ $(document).ready(() => {
         }
     });
     
-    
-
     $('#todoList').on('click', '.delete', function () {
         const id = $(this).parent().data('id'); 
         if (confirm('Are you sure you want to delete this task?')) {
@@ -57,6 +71,7 @@ $(document).ready(() => {
                 type: 'DELETE',
                 success: () => {
                     alert('Task deleted successfully!');
+                    loadTodos();
                 },
                 error: (err) => {
                     console.error('Error in deleting task:', err);

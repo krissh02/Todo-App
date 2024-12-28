@@ -30,8 +30,8 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
-        const { id } = req.params;
-        const { task } = req.body; 
+        const { id } = req?.params;
+        const { task } = req?.body; 
 
         if (!id || !task) {
             return res.status(400).json({ error: 'ID and task are required' });
